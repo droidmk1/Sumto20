@@ -49,3 +49,10 @@ Contribution guidelines and opportunities for enhancements, extensions, or optim
 Ideas for improving the bot's performance, optimizing algorithms, or adding new features to broaden the project's scope.
 
 Feel free to contribute, raise issues, or provide feedback to further enhance this project!
+
+## Authors
+
+[![Alvaro Farfan](https://img.shields.io/badge/Alvaro%20Farfan-%F0%9F%91%A4-blue?style=flat-square)](https://github.com/droidmk1)
+[![Carlos Cárdenas](https://img.shields.io/badge/Carlos%20C%C3%A1rdenas-%F0%9F%91%A4-blue?style=flat-square)](https://github.com/CarlosCardenas1)
+[![Jose Reyes](https://img.shields.io/badge/Jose%20Reyes-%F0%9F%91%A4-blue?style=flat-square)](https://github.com/JoseReyes1)
+
