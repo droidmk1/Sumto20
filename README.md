@@ -13,6 +13,10 @@ Utilizing fundamental mathematics and programming, a winning strategy was crafte
 
 [![Play with the Bot](https://img.shields.io/badge/Play%20with%20the%20Bot-Click%20Here-yellow?style=flat-square)](https://colab.research.google.com/drive/1qKCfqOn6ahTmi38w2sz69Wnpeb2TneOJ?usp=sharing)
 
+## Want to Play with a Friend?
+
+[![Play with a Friend](https://img.shields.io/badge/Play%20with%20a%20Friend-Click%20Here-blue?style=flat-square)](https://sum-to-20-pwc3dltjtq-uc.a.run.app/)
+
 ## Key Features:
 
 - **Game Analysis:** Detailed exploration of game mechanics and strategic breakdown.
