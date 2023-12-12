@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, session, redirect, url_for
-from flask_socketio import SocketIO, send, join_room, leave_room, emit
+from flask import Flask, render_template
+from flask_socketio import SocketIO, send, join_room, emit
 import random
 
 app = Flask(__name__)
@@ -82,4 +82,4 @@ def generate_unique_code():
 
 if __name__ == '__main__':
     # configuracion solo para subir al servidor
-    app.run(host='0.0.0.0', port=8080)
+    socketio.run(app, host='0.0.0.0', port=8080)

@@ -1,0 +1,15 @@
+
+docker build -t web-semanacc:latest .
+
+docker run -p 8080:8080 web-semanacc
+
+{% comment %} docker tag alvaro.farfan@unmsm.edu.pe/web-semanacc gcr.io/web-demo-evento/web-semanacc:latest
+
+gcloud docker -- push gcr.io/web-demo-evento/web-demo-evento/web-semanacc:latest
+
+
+gcloud docker pull gcr.io/web-demo-evento/web-semanacc:latest {% endcomment %}
+
+gcloud config set project web-demo-evento
+
+gcloud builds submit --tag gcr.io/web-demo-evento/web-semanacc:latest
