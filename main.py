@@ -81,7 +81,5 @@ def generate_unique_code():
     return ''.join(random.choices('0123456789', k=6))
 
 if __name__ == '__main__':
-    socketio.run(app)
-
-if __name__ == '__main__':
-    socketio.run(app)
+    # configuracion solo para subir al servidor
+    app.run(host='0.0.0.0', port=8080)
