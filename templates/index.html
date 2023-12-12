@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Juego del 20</h1>
+
+    <form id="join-form">
+        <input type="text" id="room" placeholder="Número de sala">
+        <input type="text" id="username" placeholder="Tu nombre de usuario">
+        <button type="submit">Unirse</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Genera un código único de 6 dígitos al cargar la página
+            var uniqueCode = generateUniqueCode();
+            document.getElementById('room').value = uniqueCode; // Muestra el código en el campo de número de sala
+        });
+
+        function generateUniqueCode() {
+            var code = Math.floor(100000 + Math.random() * 900000); // Genera un número aleatorio de 6 dígitos
+            return code.toString(); // Convierte el número en una cadena
+        }
+
+        document.getElementById('join-form').onsubmit = function(e) {
+            e.preventDefault();
+            var room = document.getElementById('room').value;
+            var username = document.getElementById('username').value;
+
+            if (room && username) {
+                // Redirige a la sala de chat con el número de sala y el nombre de usuario.
+                window.location.href = '/chat/' + room + '/' + username;
+            } else {
+                alert('Debes proporcionar un número de sala y un nombre de usuario.');
+            }
+        };
+    </script>
+</body>
+</html>

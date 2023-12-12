@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat en tiempo real - Sala {{ room }}</title>
+</head>
+<body>
+    <h1>Chat en tiempo real - Sala {{ room }}</h1>
+    <h2>Usuarios en la sala:</h2>
+    <ul id="user-list"></ul>
+    <h2>Turno del jugador:</h2>
+    <p id="player-turn"></p>
+    <div id="chat">
+        <div id="messages"></div>
+        <input type="text" id="message" placeholder="Escribe un número" disabled>
+        <button id="send-button" disabled>Enviar</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        var room = '{{ room }}';
+        var username = '{{ username }}';
+
+        socket.on('connect', function() {
+            console.log('Conectado al servidor');
+            socket.emit('join', { room: room, username: username });
+        });
+
+        socket.on('message', function(msg) {
+            var messages = document.getElementById('messages');
+            messages.innerHTML += '<p>' + msg + '</p>';
+        });
+
+        socket.on('user_list', function(users) {
+            var userList = document.getElementById('user-list');
+            userList.innerHTML = '';
+            users.forEach(function(user) {
+                userList.innerHTML += '<li>' + user + '</li>';
+            });
+        });
+
+        socket.on('player_turn', function(turn) {
+            var playerTurn = document.getElementById('player-turn');
+            playerTurn.innerHTML = turn;
+            var messageInput = document.getElementById('message');
+            var sendButton = document.getElementById('send-button');
+
+            // Habilitar o deshabilitar el campo de entrada y el botón según el turno
+            if (turn === username) {
+                messageInput.disabled = false;
+                sendButton.disabled = false;
+            } else {
+                messageInput.disabled = true;
+                sendButton.disabled = true;
+            }
+        });
+
+        document.getElementById('send-button').onclick = function() {
+            var message = document.getElementById('message').value;
+
+            if (message) {
+                socket.emit('message', { room: room, message: message, username: username });
+                document.getElementById('message').value = '';
+            }
+        };
+    </script>
+</body>
+</html>
