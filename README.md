@@ -1,10 +1,17 @@
 # Strategy for Winning the "Sum to 20" Game and Computational Implementation
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square&logo=python)
+![CSS](https://img.shields.io/badge/CSS-Styles-blueviolet?style=flat-square&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-Logic-yellow?style=flat-square&logo=javascript)
+![HTML](https://img.shields.io/badge/HTML-Structure-orange?style=flat-square&logo=html5)
 ![Mathematics](https://img.shields.io/badge/Mathematics-Algorithms-green?style=flat-square)
 ![GitHub](https://img.shields.io/badge/GitHub-Repository-orange?style=flat-square&logo=github)
 
 Utilizing fundamental mathematics and programming, a winning strategy was crafted for the "Sum to 20" mathematical game. This repository includes an implementation that challenges players with a bot designed based on this strategy. It encompasses game analysis, extrapolations for sum games up to 'n,' and the respective implementation.
+
+## Want to Play Against This Bot?
+
+[![Play with the Bot](https://img.shields.io/badge/Play%20with%20the%20Bot-Click%20Here-yellow?style=flat-square)](https://colab.research.google.com/drive/1qKCfqOn6ahTmi38w2sz69Wnpeb2TneOJ?usp=sharing)
 
 ## Key Features:
 
