@@ -19,7 +19,7 @@ player_turn = {}
 def index():
     return render_template('index.html')
 
-@app.route('/chat/<room>/<username>')
+@app.route('/<room>/<username>')
 def chat(room, username):
     return render_template('chat.html', room=room, username=username)
 
@@ -30,7 +30,7 @@ def handle_join(data):
 
     if room and username:
         join_room(room)
-        send(f'Usuario {username} se ha unido a la sala {room}.', room=room)
+        send(f'User {username} has joined room {room}.', room=room)
 
         if room not in rooms:
             rooms[room] = []
@@ -50,7 +50,7 @@ def handle_message(data):
 
     if room and message and username:
         if game_sums[room] >= 20:
-            send('¡Juego terminado! ' + username + ' es el ganador.', room=room)
+            send('Game over! ' + username + ' is the winner.', room=room)
             return
 
         if username == player_turn[room]:
@@ -58,23 +58,23 @@ def handle_message(data):
             try:
                 num_jugador = int(message)
                 if num_jugador < 1 or num_jugador > 3:
-                    send('Debes ingresar un número entre 1 y 3.', room=room)
+                    send('You must enter a number between 1 and 3.', room=room)
                     return
                 if game_sums[room] + num_jugador <= 20:
                     game_sums[room] += num_jugador
-                    send(f'{username} ingresó {num_jugador}, suma: {game_sums[room]}', room=room)
+                    send(f'{username} entered {num_jugador}, sum: {game_sums[room]}', room=room)
                     if game_sums[room] == 20:
-                        send('¡Juego terminado! ' + username + ' es el ganador.', room=room)
+                        send('Game over! ' + username + ' is the winner.', room=room)
                     else:
                         # Cambiar el turno al otro jugador
                         player_turn[room] = [user for user in rooms[room] if user != username][0]
                         emit('player_turn', player_turn[room], room=room)
                 else:
-                    send('No puedes sumar más de 20.', room=room)
+                    send('You cannot add more than 20.', room=room)
             except ValueError:
-                send('Debes ingresar un número válido.', room=room)
+                send('You must enter a valid number.', room=room)
         else:
-            send('Espera tu turno para jugar.', room=room)
+            send('Wait your turn to play.', room=room)
 
 # Función para generar un código único de 6 dígitos
 def generate_unique_code():
@@ -83,3 +83,4 @@ def generate_unique_code():
 if __name__ == '__main__':
     # configuracion solo para subir al servidor
     socketio.run(app, host='0.0.0.0', port=8080)
+    # socketio.run(app)
