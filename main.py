@@ -19,7 +19,7 @@ player_turn = {}
 def index():
     return render_template('index.html')
 
-@app.route('/<room>/<username>')
+@app.route('/chat/<room>/<username>')
 def chat(room, username):
     return render_template('chat.html', room=room, username=username)
 
@@ -83,4 +83,3 @@ def generate_unique_code():
 if __name__ == '__main__':
     # configuracion solo para subir al servidor
     socketio.run(app, host='0.0.0.0', port=8080)
-    # socketio.run(app)
