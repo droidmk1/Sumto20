@@ -15,7 +15,7 @@ Utilizing fundamental mathematics and programming, a winning strategy was crafte
 
 ## Want to Play with a Friend?
 
-[![Play with a Friend](https://img.shields.io/badge/Play%20with%20a%20Friend-Click%20Here-blue?style=flat-square)](https://sum-to-20-pwc3dltjtq-uc.a.run.app/)
+[![Play with a Friend](https://img.shields.io/badge/Play%20with%20a%20Friend-Click%20Here-blue?style=flat-square)](https://sumtotwentysm.web.app/)
 
 ## Key Features:
 
